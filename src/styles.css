@@ -1,0 +1,589 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Exo 2', sans-serif;
+  }
+ .hero{
+    width: 100%;
+    background: url('./assets/resources/hero1.png');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ }
+ .hero.checked {
+  background: #CEECFF;
+}
+  nav{
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+    /*background-color: #B4B4B4;*/
+    background-color: rgba(186, 184, 185, 0.55);
+    position: fixed;
+    bottom: 89%;
+    border-radius: 50px;
+  }
+  nav.checked {
+    background-color: rgba(189, 189, 189, 0.55);
+  }
+  nav .navigation{
+    display: none;
+  }
+  nav .logo a{
+    width: 50px;
+   font-family: 'Notable', sans-serif;
+   cursor: pointer;
+   color: hotpink;
+   text-decoration: none;
+   font-size: 1.4rem;
+  }
+  .logo h2 span {
+    color: #C81C6D;
+   display: none; /* Initially hide the span */
+    transform: translateX(-100%); 
+    transition: transform 2s ease; /* Add a transition for smooth animation */
+  }
+  .logo a:hover span{
+    display: inline;
+    transform: translateX(0); /* Move the span to the right */
+  }
+  nav .links{
+    opacity: 100%;
+  }
+  nav .links a{
+    text-decoration: none;
+    margin: 0px 8px;
+    color: white;
+    font-weight: 400;
+  }
+  nav.checked .links a {
+    color: #000B2F;
+  }
+  nav .links a:hover{
+    color: #5434EB;
+  }
+  .hero .main-text h2{ 
+    color: #A9AEBB;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  .hero h2 span{
+    font-size:3.7rem ;
+    font-weight: 700;
+  }
+  .main-text.checked h2, 
+  .main-text.checked #h3{
+    color: #000B2F;
+  }
+  .hero .main-text.checked .heading{
+  background-image: url('./assets/resources/colorful.jpeg');
+  font-size: 3.3rem;
+ }
+  .hero .main-text h3{
+font-size: 1.5rem;
+font-weight: 300;
+color: #A9AEBB;
+text-align: center;
+  }
+  .hero .main-text .heading{
+    margin: 20px 0;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 7px;
+    letter-spacing: 10px;
+    text-align: center;
+    color: transparent;
+    background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+background-image: url('./assets/resources/sq2.avif');
+background-size: cover;
+background-position: center;
+background-repeat: repeat-y;
+animation: bg-animation 15s cubic-bezier(0.3,0,0.7,1) infinite;
+
+  }
+  @keyframes bg-animation {
+    0% { background-position: 0% 0%;}
+    50% {background-position: 100% 100%;}
+    100% {background-position: 0% 0%;}
+  }
+
+#main-btn{
+    text-decoration: none;
+    margin-top:3rem !important;
+    background: rgb(241,221,133);
+    background: linear-gradient(133deg, rgba(241,221,133,1) 4%, rgba(242,198,0,1) 41%, rgba(188,135,60,1) 100%);
+    color: #000B2F;
+    font-weight: 300;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-size: 1.7rem;
+    box-shadow: -8px 33px 38px -8px rgba(0,0,0,0.35);
+-webkit-box-shadow: -8px 33px 38px -8px rgba(0,0,0,0.35);
+-moz-box-shadow: -8px 33px 38px -8px rgba(0,0,0,0.35);
+  }
+  #main-btn:hover{
+    border: solid 2px #f2c600;
+    background: transparent;
+    color:#f2c600; 
+  }
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: lightskyblue;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 27px;
+  left: 4px;
+  bottom: 3px;
+  background:url("./assets/resources/day-icon.png");
+  background-size:cover;
+  background-position: center;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider:before{
+  background:url("./assets/resources/night-icon.png");
+  background-size:cover;
+  background-position: center;
+}
+input:checked + .slider {
+  background-color: #42398D;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.about{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background: url("./assets/resources/ddd4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.about.checked{
+  background: #CEECFF;
+}
+.about .card{
+  width: 100%;
+  height: auto;
+  background-color: rgba(33, 22, 184, 0.5);
+  padding: 30px;
+}
+.about.checked .card{
+  background-color: rgba(41, 60, 111, 0.5);
+}
+.card .about-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.card .about-section h3{
+  font-weight: 600;
+}
+.about .card .about-section .card-img{
+ width: 30%;
+ margin-right: 2rem;
+}
+.about .card .about-section img{
+  width: 100%;
+}
+.about  .card .about-section .card-text{
+  color: white;
+  width: 300px;
+  line-height: 20px;
+}
+.about .card .about-section .card-text h3{
+  margin-bottom: 2rem;
+  text-align: center;
+  margin-left: 0;
+  font-size: 1.9rem;
+}
+
+ .about h3{
+  font-size: 2rem;
+  color: white;
+  margin-top: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.about #t{
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+ .skills-container{
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+}
+.skills-container .skill{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.skills-container .skill h3{
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}
+.skills-container .skill span{
+color: #F700FF;
+font-weight: 400;
+}
+ .skills-container .skill img{
+  width: 35%;
+}
+.skills-container .skill p{
+font-size: .9rem;
+font-weight: 200;
+width: 280px;
+text-align: center;
+margin-bottom: 1.5rem;
+} 
+.projects{
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+.p{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background: url("./assets/resources/night-web.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 1300px;
+}
+.p.checked{
+  background:  url("./assets/resources/day2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+ h2#title{
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.p.checked h2#title{
+  color: #000B2F;
+}
+.projects .project-card{
+  width: 600px;
+  height: 210px;
+  border-radius: 20px;
+  background: RGBA(90,19,134,0.57);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+.p.checked .project-card{
+  background-color: rgba(116, 110, 148, .7);
+}
+.projects .project-card h3{
+  margin-top: 0;
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+.projects .project-card p{
+  color: white;
+  font-weight: 200;
+}
+.project-card.right{
+  align-self: flex-start;
+  margin-left: 4rem;
+}
+.project-card.left{
+  align-self: flex-end;
+  margin-right: 4rem;
+}
+.projects .project-card img{ 
+  width: 30%;
+  margin-right: 2rem;
+}
+.projects .project-card .text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin-top: 15px;
+}
+.projects .project-card a{
+  color: white;
+  font-weight: 400;
+  margin-top: .5rem;
+  margin-bottom: 15px;
+} 
+.projects .project-card a:hover{
+  color: #000B2F;
+}
+.contact{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  background: #000B2F;
+}
+.contact.checked{
+  background: #BDE0F6;
+}
+.contact h2{
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.contact.checked h2{
+  color: #000B2F;
+}
+.contact .container{
+  display: flex;
+  width: 600px;
+  background: linear-gradient(133deg, rgba(241,221,133,1) 4%, rgba(242,198,0,1) 41%, rgba(188,135,60,1) 100%);
+  /*opacity: .5;*/
+  border-radius: 10px;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.contact.checked .container{
+  background: rgba(116, 110, 148, .7)
+}
+.contact .links{
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact .links i{ 
+color: white;
+font-size: 4rem;
+opacity: 1;
+margin-left: 2rem;
+}
+
+.contact .links i:hover{
+  color: #000B2F;
+} 
+.contact .container .email{
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.contact .container .email i{
+  margin-right: 20px;
+  font-size: 3rem;
+}
+footer{
+  height: 200px;
+  background-color: #000B2F;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  color: white;
+  font-weight: 200;
+  padding-bottom: 2rem;
+}
+footer.checked{
+  background: #BDE0F6;
+  color: #000B2F;
+}
+@media (max-width: 1024px) {
+  .skills-container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  nav .links,
+  nav .logo{
+    display: none;
+  }
+  .navigation i{
+    font-size: 1.7rem;
+   
+  }
+  .navigation .dropdown-toggle::after {
+    display: none;
+  }
+  .navigation .dropdown button{
+    background-color: transparent;
+    border: none;
+  }
+ nav .navigation{
+    margin-left: -1rem;
+    display: block;
+  }
+  .dropdown-menu.show {
+    text-align: center;
+    background-color: rgba(186, 184, 185, 0.55);
+    border: none;
+    height: auto;
+  }
+  .dropdown-menu.show a{
+    padding: 1rem 1rem;
+    color: antiquewhite;
+  }
+  nav.checked .dropdown-menu.show a{
+    color: #000B2F;
+  }
+  .dropdown-menu.show a:hover{
+    color: #000B2F;
+  }
+  .dropdown-menu{
+  --bs-dropdown-link-active-bg: rgba(186, 184, 185, 0.55);
+}
+  #home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .hero .main-text h3{
+    width: 290px;
+  }
+  .p{
+    background: url("../src/assets/resources/ddd-mobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+  .card .about-section{
+    flex-direction: column-reverse;
+  }
+ .about .card .about-section .card-img{
+    margin-right: 0;
+    margin-top: 2rem;
+    width: 70%;
+  }
+  .p{
+    height: 1450px;
+
+  }
+  .projects .project-card{
+    width: 90%;
+    height: auto;
+  }
+
+  .projects .project-card img{
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    align-self: center;  }
+
+  .projects .project-card .text{
+    width: auto;
+    text-align: center;
+  }
+  .projects .project-card .text h3{
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .projects .project-card .text a{
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .projects .project-card .text p{
+    font-size: 14px;
+
+  }
+  .project-card.right,
+  .project-card.left {
+    align-self: center;
+    margin-left: 0rem;
+    margin-right: 0rem;
+}
+.contact .container{
+  width: 90%;
+  margin-bottom: 2.5rem;
+}
+.contact h2{
+  font-size: 1.5rem;
+}
+footer p{
+  margin-top: 2rem;
+  align-self: self-start;
+}
+}
